@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankBuddy - Your Intelligent Banking Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-500: #4285f4;
+            --red-500: #ea4335;
+            --yellow-500: #fbbc04;
+            --green-500: #34a853;
+            --grey-200: #e8eaed;
+            --grey-900: #202124;
+        }
+        body {
+            font-family: 'Google Sans', sans-serif;
+            color: var(--grey-900);
+            background-color: var(--grey-200);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: var(--blue-500);
+            color: white;
+            text-align: center;
+            padding: 3em 2em;
+            position: relative;
+            overflow: hidden;
+        }
+      
+        h1 {
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            font-size: 3em;
+        }
+        h2 {
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 300;
+            color: var(--yellow-500);
+            margin-bottom: 1em;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 4em 2em;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 1em;
+            padding: 2em;
+            width: 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .service-icon {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .cta-button {
+            background-color: var(--green-500);
+            color: white;
+            border: none;
+            padding: 1em 2em;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .cta-button:hover {
+            background-color: linear-gradient(135deg, #64b5f6, #ce93d8);
+            transform: scale(1.05);
+        }
+        .footer {
+            background-color: var(--grey-900);
+            color: white;
+            text-align: center;
+        }
+        .cloud-community {
+            margin-top: 1em;
+            font-size: 0.9em;
+            color: var(--grey-200);
+        }
+                /* Navigation Bar */
+                .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 1em 2em;
+            background-color: var(--grey-900);
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1em;
+        }
+        .nav-link a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav-link a:hover {
+            background-color: var(--blue-500);
+        }
+    </style>
+<link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+<script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+<df-messenger
+  oauth-client-id="INSERT_OAUTH_CLIENT_ID"
+  project-id="gen-ai-guru-live-lecture"
+  agent-id="7cded692-5970-42a3-853c-0ea6ba846948"
+  language-code="en"
+  max-query-length="-1">
+  <df-messenger-chat-bubble
+   chat-title="BankBuddy">
+  </df-messenger-chat-bubble>
+</df-messenger>
+<style>
+  df-messenger {
+    z-index: 999;
+    position: fixed;
+    --df-messenger-font-color: #000;
+    --df-messenger-font-family: Google Sans;
+    --df-messenger-chat-background: #f3f6fc;
+    --df-messenger-message-user-background: #d3e3fd;
+    --df-messenger-message-bot-background: #fff;
+    bottom: 16px;
+    right: 16px;
+  }
+</style>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li class="nav-link"><a href="#home">Home</a></li>
+            <li class="nav-link"><a href="#services">Services</a></li>
+            <li class="nav-link"><a href="#contact">Contact</a></li>
+            <li class="nav-link"><a href="#about">About</a></li>
+        </ul>
+    </nav>
+    <div class="header">
+        <h1>BankBuddy</h1>
+        <h2>Your Intelligent Banking Assistant</h2>
+        <button class="cta-button">Get Started</button>
+    </div>
+    
+    <div class="services">
+        <div class="service-card">
+            <div class="service-icon">💼</div>
+            <h3>Account Information</h3>
+            <p>Access your account details quickly and securely.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Investment Calculator</h3>
+            <p>Get projections and compare investment options.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">❓</div>
+            <h3>FAQ Database</h3>
+            <p>Find answers to common banking questions instantly.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🏧</div>
+            <h3>ATM Locator</h3>
+            <p>Find the nearest ATM based on your location.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🏦</div>
+            <h3>Branch Locator</h3>
+            <p>Locate the nearest branch for in-person services.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">💰</div>
+            <h3>Loan Specialist</h3>
+            <p>Get expert assistance with loan-related inquiries.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📈</div>
+            <h3>Investment Advisor</h3>
+            <p>Receive personalized investment advice.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📞</div>
+            <h3>Customer Support</h3>
+            <p>Get assistance from our friendly customer support team.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🔒</div>
+            <h3>Secure Transactions</h3>
+            <p>Experience secure and encrypted transactions.</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 BankBuddy. All rights reserved.</p>
+        <div class="cloud-community">
+            <p>Presented at Cloud Community Day 2024 Rajkot</p>
+        </div>
+    </footer>
+</body>
+</html>
